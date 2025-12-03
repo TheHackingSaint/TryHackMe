@@ -108,6 +108,4 @@ Watch the terminal where `server.py` is running.
 
 ---
 
-# **Done**
 
-This file is clean, concise, and ready for GitHub with zero unnecessary information.
