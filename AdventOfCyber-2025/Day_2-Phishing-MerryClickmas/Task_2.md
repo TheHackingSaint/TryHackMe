@@ -1,134 +1,113 @@
-# **Task 2 — Phishing Attack Walkthrough (Clear, Concise & GitHub-Ready)**
+# **Task 2 — Phishing Simulation (Clear & Concise Guide)**
 
-Room Link: *TryHackMe — Phishing (AOC 2025)*
-
----
-
-# 🚀 **Overview**
-
-This task demonstrates how a phishing attack is executed using a custom phishing server and the Social-Engineer Toolkit (SET). The goal is to:
-
-* Host a phishing page
-* Capture credentials
-* Craft & send a phishing email
-* Lure the target into interacting with the malicious link
-
-Everything below is intentionally **short, visual, and extremely easy to remember.**
+*Extremely clear, professional, and GitHub-friendly.*
 
 ---
 
-# 🎯 **1. Start the Phishing Server**
+## 🔗 **Room Link**
 
-Run the Python phishing server:
+**TryHackMe:** [https://tryhackme.com/room/phishing-aoc2025-h2tkye9fzU](https://tryhackme.com/room/phishing-aoc2025-h2tkye9fzU)
+
+---
+
+# **1. Starting the Phishing Server**
+
+Run the phishing script:
 
 ```
 ./server.py
 ```
 
-This:
+* The server starts on **port 8000**.
+* It listens on **0.0.0.0** → all network interfaces.
 
-* Starts listening on **port 8000**
-* Binds to **0.0.0.0 (all interfaces)**
-* Displays **captured credentials directly in the same terminal**
+### ✅ Preview What the Victim Sees
 
-### ✔ Preview the phishing page
-
-Open Firefox on the AttackBox:
+Open Firefox inside AttackBox:
 
 * `http://CONNECTION_IP:8000`
 * or `http://127.0.0.1:8000`
 
-This shows **exactly what the victim will see**.
+This shows exactly what the target will see.
 
 ---
 
-# ✉️ **2. Social-Engineer Toolkit (SET)**
+# **2. Using the Social-Engineer Toolkit (SET)**
 
-SET is a powerful framework for creating and sending phishing attacks.
-Start it with:
+SET allows composing and sending phishing emails.
+Launch it:
 
 ```
 setoolkit
 ```
 
-You will see a menu ending with `set>`.
+Select:
+
+1. **Social-Engineering Attacks**
+2. **Mass Mailer Attack**
+
+Use **99** anytime to return to the main menu.
+Use **Ctrl + C** if you make a mistake while typing email content.
 
 ---
 
-# 🛠 **3. SET Menu Navigation (Quick Path)**
+# **3. Configuring the Phishing Email**
 
-```
-1 → Social-Engineering Attacks
-5 → Mass Mailer Attack
-```
+Answer the prompts as follows:
 
-If you select a wrong option:
+### **📧 Email Delivery Settings**
 
-* `99` = return to main menu
-* `Ctrl + C` = abort email creation
+* **Send email to:** `factory@wareville.thm`
+* **Delivery method:** *Use your own server or open relay*
+* **From address:** `updates@flyingdeer.thm`
+* **From name:** *Flying Deer*
+* **Username:** *(leave blank)*
+* **Password:** *(leave blank)*
+* **SMTP server:** `MACHINE_IP`
+* **Port:** `25`
 
----
+### **📎 Email Options**
 
-# 📬 **4. Configure the Phishing Email**
+* **High priority:** no
+* **Attach a file:** n
+* **Attach inline file:** n
 
-Answer the prompts in SET:
-
-| Field              | Input                            |
-| ------------------ | -------------------------------- |
-| **Send email to**  | `factory@wareville.thm`          |
-| **How to deliver** | Use your own server / open relay |
-| **From address**   | `updates@flyingdeer.thm`         |
-| **From name**      | `Flying Deer`                    |
-| **SMTP server**    | `MACHINE_IP`                     |
-| **Port**           | `25`                             |
-
-Leave username/password blank.
-
-### Optional choices
-
-* High priority → **no**
-* Attach a file → **n**
-* Inline file → **n**
-
-### Email details
+### **✉️ Email Content**
 
 * **Subject:** `Shipping Schedule Changes`
-* **Format:** Plaintext (press Enter)
-* **Body:** Write a believable message and include:
+* **Format:** plaintext
+* **Body:** Write a convincing message and include:
 
   * `http://CONNECTION_IP:8000`
+* End input with: `END`
 
-Type `END` when finished.
-
----
-
-# 🕵️ **5. Monitor Credential Capture**
-
-Return to the terminal where `server.py` is running.
-
-* If the victim logs in → **Credentials appear instantly**
-* Wait **1–2 minutes** if needed
+The phishing email is now sent.
 
 ---
 
-# ✅ **Task Questions & Answers**
+# **4. Monitoring for Captured Credentials**
 
-### **Q2. Password used to access the TBFC portal**
+Watch the terminal where `server.py` is running.
 
-**→ unranked-wisdom-anthem**
-
-### **Q3. Total number of toys expected for delivery**
-
-Browse to: `http://MACHINE_IP` → Login → Check mailbox
-
-**→ 1,984,000**
+* Credentials appear here if the user falls for the phishing page.
+* May take **1–2 minutes**.
 
 ---
 
-# 🎉 **End of Task**
+# **5. Answers**
 
-You can explore further by completing the "Phishing Prevention" room on TryHackMe.
+(Only the required ones — no extras.)
+
+### **Q2:** Password used to access TBFC portal
+
+➡️ **unranked-wisdom-anthem**
+
+### **Q3:** Total number of toys expected
+
+➡️ **1984000**
 
 ---
 
-Need this format for future tasks too? I can generate a reusable prompt template for you.
+# **Done**
+
+This file is clean, concise, and ready for GitHub with zero unnecessary information.
