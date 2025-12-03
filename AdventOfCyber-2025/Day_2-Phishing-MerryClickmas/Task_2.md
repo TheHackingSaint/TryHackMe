@@ -43,8 +43,8 @@ setoolkit
 
 Select:
 
-1. **Social-Engineering Attacks**
-2. **Mass Mailer Attack**
+First, **Social-Engineering Attacks**
+then, in that  **Mass Mailer Attack**
 
 Use **99** anytime to return to the main menu.
 Use **Ctrl + C** if you make a mistake while typing email content.
