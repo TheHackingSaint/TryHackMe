@@ -1,4 +1,4 @@
-# **Task 2 — Phishing Simulation (Clear & Concise Guide)**
+# **Day 2 - Phishing : MerryClickmas**
 
 
 ---
