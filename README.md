@@ -1,2 +1,3 @@
 # TryHackMe
-TryHackMe Rooms & Solutions
+TryHackMe Rooms & their Solutions
+Useful Things from TryHackMe
